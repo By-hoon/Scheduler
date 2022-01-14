@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGoogle, faGithub } from "@fortawesome/free-brands-svg-icons";
 import { authService, dbService, firebaseInstance } from "../firebase/fBase";
+import Seo from "components/SEO";
 
 const LoginButton = styled.button``;
 
@@ -25,6 +26,7 @@ export default function Login() {
   };
   return (
     <>
+      <Seo title="로그인 | Scheduler" />
       <LoginButton onClick={onSocialClick} name="google">
         Google로 시작하기 <FontAwesomeIcon icon={faGoogle} />
       </LoginButton>
