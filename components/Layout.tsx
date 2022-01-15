@@ -1,7 +1,13 @@
+import styled from "styled-components";
+import Navigation from "./Navigation";
+
+const LayoutStyle = styled.div``;
+
 export default function Layout({ children }: React.PropsWithChildren<{}>) {
   return (
     <>
-      <div>{children}</div>
+      <Navigation />
+      <LayoutStyle>{children}</LayoutStyle>
     </>
   );
 }
