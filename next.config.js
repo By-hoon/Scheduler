@@ -1,13 +1,21 @@
 /** @type {import('next').NextConfig} */
-module.exports = {
-  reactStrictMode: true,
-};
 
 const withBundleAnalyzer = require("@next/bundle-analyzer")({
   enabled: process.env.ANALYZE === "true",
 });
 
 module.exports = withBundleAnalyzer({
+  reactStrictMode: true,
+  async redirects() {
+    return [
+      {
+        source: "/welcome",
+        destination: "/",
+        permanent: false,
+      },
+    ];
+  },
+
   target: "serverless",
   env: {
     BASE_URL: process.env.BASE_URL,
