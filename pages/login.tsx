@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGoogle, faGithub } from "@fortawesome/free-brands-svg-icons";
 import { authService, dbService, firebaseInstance } from "../firebase/fBase";
 import Seo from "components/SEO";
+import Router from "next/router";
 
 const LoginButton = styled.button``;
 
@@ -23,6 +24,7 @@ export default function Login() {
         userName: data.user.displayName,
       });
     }
+    Router.push(`/welcome?name=${data.user.displayName}`, "/welcome");
   };
   return (
     <>
