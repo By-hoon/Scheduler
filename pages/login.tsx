@@ -24,7 +24,16 @@ export default function Login() {
         userName: data.user.displayName,
       });
     }
-    Router.push(`/welcome?name=${data.user.displayName}`, "/welcome");
+    Router.push(
+      {
+        pathname: "/welcome",
+        query: {
+          userName: data.user.displayName,
+          userId: data.user.uid,
+        },
+      },
+      "/welcome"
+    );
   };
   return (
     <>
