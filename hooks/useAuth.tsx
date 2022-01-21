@@ -1,10 +1,6 @@
 import { useEffect, useState } from "react";
+import { UserProps } from "shared/const";
 import { authService, dbService } from "../firebase/fBase";
-
-interface UserProps {
-  uid: string;
-  uName: string;
-}
 
 const Auth = () => {
   const [userObj, setUserObj] = useState<UserProps>();
